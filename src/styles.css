@@ -93,8 +93,21 @@
   }
 }
 
+/* Preserve the original design while keeping its rem-based type readable on wide screens. */
+@media (min-width: 80rem) {
+  html {
+    font-size: 118.75%;
+  }
+}
+
+@media (min-width: 100rem) {
+  html {
+    font-size: 125%;
+  }
+}
+
 @utility eyebrow {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 500;
