@@ -46,14 +46,14 @@ export function SiteHeader() {
         </div>
 
         <nav className="hidden items-center gap-7 lg:flex">
-          {nav.slice(0, 5).map((item) => (
+          {nav.slice(0, 5).map(({ label, ...link }) => (
             <Link
-              key={item.label}
-              {...item}
+              key={label}
+              {...link}
               className="text-[0.8rem] tracking-wide text-muted-foreground transition-colors hover:text-foreground"
               activeProps={{ className: "text-foreground" }}
             >
-              {item.label}
+              {label}
             </Link>
           ))}
         </nav>
@@ -100,14 +100,14 @@ export function SiteHeader() {
             </button>
           </div>
           <nav className="flex flex-col px-5 pt-6">
-            {nav.map((item) => (
+            {nav.map(({ label, ...link }) => (
               <Link
-                key={item.label}
-                {...item}
+                key={label}
+                {...link}
                 onClick={() => setMenu(false)}
                 className="border-b border-border py-5 font-display text-3xl"
               >
-                {item.label}
+                {label}
               </Link>
             ))}
           </nav>
