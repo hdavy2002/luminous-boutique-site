@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, ShoppingBag, X } from "lucide-react";
 
-import { categories } from "@/data/products";
 import { useCart } from "@/lib/cart";
 import { cn } from "@/lib/utils";
 
@@ -49,8 +48,8 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-7 lg:flex">
           {nav.slice(0, 5).map((item) => (
             <Link
-              key={item.to}
-              to={item.to}
+              key={item.label}
+              {...item}
               className="text-[0.8rem] tracking-wide text-muted-foreground transition-colors hover:text-foreground"
               activeProps={{ className: "text-foreground" }}
             >
@@ -103,8 +102,8 @@ export function SiteHeader() {
           <nav className="flex flex-col px-5 pt-6">
             {nav.map((item) => (
               <Link
-                key={item.to}
-                to={item.to}
+                key={item.label}
+                {...item}
                 onClick={() => setMenu(false)}
                 className="border-b border-border py-5 font-display text-3xl"
               >
