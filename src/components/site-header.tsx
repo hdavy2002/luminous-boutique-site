@@ -8,7 +8,10 @@ import { cn } from "@/lib/utils";
 
 const nav = [
   { to: "/shop", label: "Shop all" },
-  ...categories.map((c) => ({ to: `/shop/${c.slug}`, label: c.name })),
+  { to: "/shop/$category", params: { category: "necklaces" }, label: "Necklaces" },
+  { to: "/shop/$category", params: { category: "rings" }, label: "Rings" },
+  { to: "/shop/$category", params: { category: "earrings" }, label: "Earrings" },
+  { to: "/shop/$category", params: { category: "bracelets" }, label: "Bracelets" },
   { to: "/about", label: "Our studio" },
 ] as const;
 
